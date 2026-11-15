@@ -1,0 +1,42 @@
+name: Tests automatizados
+
+# Se ejecuta en cada push (a cualquier rama), en pull requests hacia main
+# y también manualmente desde la pestaña "Actions".
+on:
+  push:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    env:
+      HEADLESS: "true"   # sin interfaz gráfica en el servidor de CI
+
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: python -m pip install -r requirements.txt
+
+      # Google Chrome ya viene instalado en ubuntu-latest;
+      # webdriver-manager descarga el ChromeDriver compatible.
+      - name: Ejecutar pruebas (UI + API)
+        run: python -m pytest
+
+      # "if: always()" sube los reportes incluso si algún test falló
+      - name: Guardar reportes como artefactos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes-pytest
+          path: reports/
+          if-no-files-found: warn

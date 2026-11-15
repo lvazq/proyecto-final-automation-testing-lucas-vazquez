@@ -1,0 +1,14 @@
+[
+  {
+    "caso": "post_basico",
+    "payload": {"title": "Mi primer post", "body": "Contenido de prueba", "userId": 1}
+  },
+  {
+    "caso": "post_otro_usuario",
+    "payload": {"title": "Post de otro usuario", "body": "Otro contenido", "userId": 5}
+  },
+  {
+    "caso": "post_caracteres_especiales",
+    "payload": {"title": "Ñandú & café", "body": "Texto con acentos y símbolos <>", "userId": 3}
+  }
+]

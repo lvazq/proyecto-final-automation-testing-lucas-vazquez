@@ -1,0 +1,30 @@
+{
+  "datos_validos": {
+    "nombre": "Lucas",
+    "apellido": "Vazquez",
+    "codigo_postal": "1828"
+  },
+  "casos_invalidos": [
+    {
+      "caso": "sin_nombre",
+      "nombre": "",
+      "apellido": "Vazquez",
+      "codigo_postal": "1828",
+      "mensaje_error": "Error: First Name is required"
+    },
+    {
+      "caso": "sin_apellido",
+      "nombre": "Lucas",
+      "apellido": "",
+      "codigo_postal": "1828",
+      "mensaje_error": "Error: Last Name is required"
+    },
+    {
+      "caso": "sin_codigo_postal",
+      "nombre": "Lucas",
+      "apellido": "Vazquez",
+      "codigo_postal": "",
+      "mensaje_error": "Error: Postal Code is required"
+    }
+  ]
+}

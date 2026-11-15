@@ -1,0 +1,10 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+# Archivos generados en cada ejecución (en CI se guardan como artefactos)
+reports/*.html
+reports/*.log
+reports/screenshots/*.png
