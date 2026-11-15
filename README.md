@@ -1,5 +1,5 @@
 # Proyecto Final – Automatización de Testing (UI + API)
-
+![Tests automatizados](https://github.com/lvazq/proyecto-final-automation-testing-lucas-vazquez/actions/workflows/tests.yml/badge.svg)
 ## Propósito del proyecto
 
 Suite de pruebas automatizadas que combina:
