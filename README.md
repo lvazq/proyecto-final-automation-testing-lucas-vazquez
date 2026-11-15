@@ -1,5 +1,12 @@
 # Proyecto Final – Automatización de Testing (UI + API)
 ![Tests automatizados](https://github.com/lvazq/proyecto-final-automation-testing-lucas-vazquez/actions/workflows/tests.yml/badge.svg)
+
+**Alumno:** Lucas Vazquez
+**Sitio bajo prueba (UI):** https://www.saucedemo.com/
+**API bajo prueba:** https://jsonplaceholder.typicode.com/
+
+
+
 ## Propósito del proyecto
 
 Suite de pruebas automatizadas que combina:
@@ -8,6 +15,7 @@ Suite de pruebas automatizadas que combina:
   Selenium WebDriver y el patrón **Page Object Model (POM)**.
 - **Pruebas de API** sobre [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
   con la librería `requests`.
+  > SauceDemo es una aplicación solo front-end y no expone API pública, por eso las pruebas de API se realizan sobre JSONPlaceholder, tal como permite la consigna.
 
 Incluye datos de prueba externos (CSV/JSON), capturas de pantalla
 automáticas en los fallos, logging, reporte HTML y ejecución
@@ -129,6 +137,10 @@ python3 -m pytest -m api                     # solo pruebas de API
 python3 -m pytest tests/ui/test_login.py     # un solo archivo
 HEADLESS=true python3 -m pytest              # UI sin abrir ventana de Chrome
 ```
+## Resultados de la ejecución
+
+28 tests (20 UI + 8 API) → 28 passed, 0 failed. Ejecución automática en cada push con GitHub Actions.
+
 
 ## Cómo interpretar los reportes generados
 
